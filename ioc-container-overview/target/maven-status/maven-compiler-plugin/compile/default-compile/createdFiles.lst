@@ -1,4 +1,6 @@
+spring/ioc/overview/dependency/injection/DependencyInjectionDemo.class
+spring/ioc/overview/repository/UserRepository.class
 spring/ioc/overview/domain/SuperUser.class
-spring/ioc/overview/annotation/Super.class
 spring/ioc/overview/domain/User.class
-spring/ioc/overview/DependencyLookupDemo.class
+spring/ioc/overview/dependency/lookup/DependencyLookupDemo.class
+spring/ioc/overview/annotation/Super.class

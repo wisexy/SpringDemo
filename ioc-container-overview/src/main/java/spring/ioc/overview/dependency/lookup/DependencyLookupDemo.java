@@ -1,9 +1,10 @@
-package spring.ioc.overview;
+package spring.ioc.overview.dependency.lookup;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.ListableBeanFactory;
 import org.springframework.beans.factory.ObjectFactory;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import spring.ioc.overview.annotation.Super;
 import spring.ioc.overview.domain.User;
@@ -12,9 +13,13 @@ import java.util.Map;
 
 /**
  * Spring依赖查找的三种方式：
- *  1.通过名称查找
- *  2.通过类型查找
- *  3.通过注解查找
+ *  1. 通过名称查找
+ *      1.1. 实时查找
+ *      1.2. 延迟查找
+ *  2. 通过类型查找
+ *      2.1. 通过类型查找单个实例
+ *      2.2. 通过类型查找集合实例
+ *  3. 通过注解查找
  *
  */
 @Slf4j
@@ -22,7 +27,7 @@ public class DependencyLookupDemo {
 
     public static void main(String args[]) {
         BeanFactory beanFactory = new ClassPathXmlApplicationContext("classpath:/META-INF/dependency-lookup-context.xml");
-
+        ApplicationContext context;
         // 1. 通过名称
         // 1.1. 实时查找
         lookupInRealTime(beanFactory);

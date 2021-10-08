@@ -6,11 +6,11 @@
 
     <bean id="user" class="spring.ioc.overview.domain.User">
         <property name="id" value="1"></property>
-        <property name="name" value="cm"></property>
+        <property name="name" value="User1"></property>
     </bean>
 
     <bean id="superUser" class="spring.ioc.overview.domain.SuperUser" parent="user" primary="true">
-        <property name="address" value="cun"></property>
+        <property name="address" value="Address1"></property>
     </bean>
 
 <!--    <bean id="user2" class="spring.ioc.overview.domain.User">-->

@@ -12,7 +12,7 @@ import java.util.Map;
 @Slf4j
 public class IocContainerDemo {
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
 
         DefaultListableBeanFactory beanFactory = new DefaultListableBeanFactory();
 
@@ -35,4 +35,5 @@ public class IocContainerDemo {
             log.info("通过类型查找集合实例：{}", users.toString());
         }
     }
+
 }

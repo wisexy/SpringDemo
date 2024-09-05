@@ -9,6 +9,11 @@
         <property name="name" value="cm"></property>
     </bean>
 
+    <bean id="lifeCycleUser" class="spring.ioc.overview.lifecycle.LifeCycleUser">
+        <property name="id" value="1"></property>
+        <property name="name" value="cm_lift_cycle"></property>
+    </bean>
+
     <bean id="superUser" class="spring.ioc.overview.domain.SuperUser" parent="user" primary="true">
         <property name="address" value="cun"></property>
     </bean>
@@ -21,4 +26,8 @@
     <bean id="objectFactory" class="org.springframework.beans.factory.config.ObjectFactoryCreatingFactoryBean">
         <property name="targetBeanName" value="user"></property>
     </bean>
+
+    <bean id="beanPostProcessorSample" class="spring.ioc.overview.lifecycle.BeanPostProcessorSample"/>
+    <bean id="beanNameAwareSample" class="spring.ioc.overview.lifecycle.BeanNameAwareSample"/>
+    <bean id="beanFactoryAwareSample" class="spring.ioc.overview.lifecycle.BeanFactoryAwareSample"/>
 </beans>

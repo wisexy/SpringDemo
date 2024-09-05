@@ -11,6 +11,7 @@ public class User {
     }
 
     public void setId(Long id) {
+        System.out.println("User setId()方法被调用，id=" + id);
         this.id = id;
     }
 
@@ -19,7 +20,12 @@ public class User {
     }
 
     public void setName(String name) {
+        System.out.println("User setName()方法被调用，name=" + name);
         this.name = name;
+    }
+
+    public User() {
+        System.out.println("User 无参构造函数被调用");
     }
 
     @Override

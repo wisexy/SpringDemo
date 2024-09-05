@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="user" class="spring.ioc.overview.domain.User">
+        <property name="id" value="1"></property>
+        <property name="name" value="cm"></property>
+    </bean>
+
+    <bean id="lifeCycleUser" class="spring.ioc.overview.lifecycle.LifeCycleUser">
+        <property name="id" value="1"></property>
+        <property name="name" value="cm_lift_cycle"></property>
+    </bean>
+
+    <bean id="superUser" class="spring.ioc.overview.domain.SuperUser" parent="user" primary="true">
+        <property name="address" value="cun"></property>
+    </bean>
+
+<!--    <bean id="user2" class="spring.ioc.overview.domain.User">-->
+<!--        <property name="id" value="2"></property>-->
+<!--        <property name="name" value="ch"></property>-->
+<!--    </bean>-->
+
+    <bean id="objectFactory" class="org.springframework.beans.factory.config.ObjectFactoryCreatingFactoryBean">
+        <property name="targetBeanName" value="user"></property>
+    </bean>
+
+    <bean id="beanPostProcessorSample" class="spring.ioc.overview.lifecycle.BeanPostProcessorSample"/>
+    <bean id="beanNameAwareSample" class="spring.ioc.overview.lifecycle.BeanNameAwareSample"/>
+    <bean id="beanFactoryAwareSample" class="spring.ioc.overview.lifecycle.BeanFactoryAwareSample"/>
+</beans>

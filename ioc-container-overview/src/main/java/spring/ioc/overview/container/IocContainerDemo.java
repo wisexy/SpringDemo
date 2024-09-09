@@ -32,7 +32,7 @@ public class IocContainerDemo {
         if (beanFactory instanceof ListableBeanFactory) {
             ListableBeanFactory listableBeanFactory = (ListableBeanFactory) beanFactory;
             Map<String, User> users = listableBeanFactory.getBeansOfType(User.class);
-            log.info("通过类型查找集合实例：{}", users.toString());
+            log.info("通过类型查找集合实例: {}", users.toString());
         }
     }
 

@@ -12,7 +12,7 @@ import spring.ioc.overview.domain.User;
 import java.util.Map;
 
 /**
- * Spring依赖查找的三种方式：
+ * Spring依赖查找的三种方式:
  *  1. 通过名称查找
  *      1.1. 实时查找
  *      1.2. 延迟查找
@@ -50,7 +50,7 @@ public class DependencyLookupDemo {
      */
     private static void lookupInRealTime(BeanFactory beanFactory) {
         User user = (User) beanFactory.getBean("user");
-        log.info("通过名称实时查找：{} {}", user.hashCode(), user.toString());
+        log.info("通过名称实时查找: {} {}", user.hashCode(), user.toString());
     }
 
     /**
@@ -59,7 +59,7 @@ public class DependencyLookupDemo {
     private static void lookupInLazy(BeanFactory beanFactory) {
         ObjectFactory<User> objectFactory = (ObjectFactory) beanFactory.getBean("objectFactory");
         User user = objectFactory.getObject();
-        log.info("通过名称延迟查找：{} {}", user.hashCode(), user.toString());
+        log.info("通过名称延迟查找: {} {}", user.hashCode(), user.toString());
     }
 
     /**
@@ -68,7 +68,7 @@ public class DependencyLookupDemo {
     private static void lookupByType(BeanFactory beanFactory) {
         User user = beanFactory.getBean(User.class);
 
-        log.info("通过类型查找单个实例：{} {}", user.hashCode(), user.toString());
+        log.info("通过类型查找单个实例: {} {}", user.hashCode(), user.toString());
     }
 
     /**
@@ -78,7 +78,7 @@ public class DependencyLookupDemo {
         if (beanFactory instanceof ListableBeanFactory) {
             ListableBeanFactory listableBeanFactory = (ListableBeanFactory) beanFactory;
             Map<String, User> users = listableBeanFactory.getBeansOfType(User.class);
-            log.info("通过类型查找集合实例：{}", users.toString());
+            log.info("通过类型查找集合实例: {}", users.toString());
         }
     }
 
@@ -89,7 +89,7 @@ public class DependencyLookupDemo {
         if (beanFactory instanceof ListableBeanFactory) {
             ListableBeanFactory listableBeanFactory = (ListableBeanFactory) beanFactory;
             Map<String, User> users = (Map) listableBeanFactory.getBeansWithAnnotation(Super.class);
-            log.info("通过注解查找集合实例：{}", users.toString());
+            log.info("通过注解查找集合实例: {}", users.toString());
         }
     }
 

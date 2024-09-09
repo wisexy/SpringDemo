@@ -1,22 +1,21 @@
 package spring.ioc.overview.lifecycle;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
-import org.springframework.context.annotation.Bean;
-import org.springframework.stereotype.Component;
 
-@Component
+@Slf4j
 public class BeanPostProcessorSample implements BeanPostProcessor {
 
     @Override
     public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
-        System.out.println("Before initialization: " + beanName);
+        log.info("第4步: [{}] postProcessBeforeInitialization()被执行, bean class = [{}]", beanName, bean.getClass());
         return bean;
     }
 
     @Override
     public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
-        System.out.println("After initialization: " + beanName);
+        log.info("第7步: [{}] postProcessAfterInitialization()被执行, bean class = [{}]", beanName, bean.getClass());
         return bean;
     }
 

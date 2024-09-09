@@ -7,7 +7,7 @@ import org.springframework.core.env.Environment;
 import spring.ioc.overview.repository.UserRepository;
 
 /**
- * Spring依赖注入：
+ * Spring依赖注入:
  *  1. 通过名称注入
  *  2. 通过类型注入
  *      2.1. 单个Bean对象
@@ -24,15 +24,15 @@ public class DependencyInjectionDemo {
 
         UserRepository repository = (UserRepository) beanFactory.getBean("userRepository");
 
-        // 来源一：自定义的bean
-        log.info("注入自定义的Bean：{}", repository.getUsers());
+        // 来源一: 自定义的bean
+        log.info("注入自定义的Bean: {}", repository.getUsers());
 
-        // 来源二：内建的Bean
+        // 来源二: 内建的Bean
         Environment environment = beanFactory.getBean(Environment.class);
-        log.info("注入内建的Bean：{}", environment.toString());
+        log.info("注入内建的Bean: {}", environment.toString());
 
-        // 来源三：内建的依赖
-        log.info("注入内建的依赖：{}", repository.getBeanFactory());
+        // 来源三: 内建的依赖
+        log.info("注入内建的依赖: {}", repository.getBeanFactory());
         repository.getBeanFactory();
     }
 

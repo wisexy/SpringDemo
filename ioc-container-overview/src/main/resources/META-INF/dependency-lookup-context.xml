@@ -4,30 +4,23 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         https://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="user" class="spring.ioc.overview.domain.User">
-        <property name="id" value="1"></property>
-        <property name="name" value="cm"></property>
+    <bean id="user" class="spring.ioc.overview.domain.User" init-method="init">
+        <property name="id" value="2016110676"/>
+        <property name="name" value="cm@bupt"/>
     </bean>
 
-    <bean id="lifeCycleUser" class="spring.ioc.overview.lifecycle.LifeCycleUser">
-        <property name="id" value="1"></property>
-        <property name="name" value="cm_lift_cycle"></property>
-    </bean>
-
-    <bean id="superUser" class="spring.ioc.overview.domain.SuperUser" parent="user" primary="true">
-        <property name="address" value="cun"></property>
-    </bean>
-
-<!--    <bean id="user2" class="spring.ioc.overview.domain.User">-->
-<!--        <property name="id" value="2"></property>-->
-<!--        <property name="name" value="ch"></property>-->
+<!--    <bean id="user2" class="spring.ioc.overview.domain.User" init-method="init">-->
+<!--        <property name="id" value="366401"/>-->
+<!--        <property name="name" value="cm@antgroup"/>-->
 <!--    </bean>-->
 
+    <bean id="superUser" class="spring.ioc.overview.domain.SuperUser" parent="user" primary="true">
+        <property name="address" value="铂悦城"/>
+    </bean>
+
     <bean id="objectFactory" class="org.springframework.beans.factory.config.ObjectFactoryCreatingFactoryBean">
-        <property name="targetBeanName" value="user"></property>
+        <property name="targetBeanName" value="user"/>
     </bean>
 
     <bean id="beanPostProcessorSample" class="spring.ioc.overview.lifecycle.BeanPostProcessorSample"/>
-    <bean id="beanNameAwareSample" class="spring.ioc.overview.lifecycle.BeanNameAwareSample"/>
-    <bean id="beanFactoryAwareSample" class="spring.ioc.overview.lifecycle.BeanFactoryAwareSample"/>
 </beans>

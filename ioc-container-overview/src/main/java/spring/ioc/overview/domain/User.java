@@ -62,12 +62,6 @@ public class User implements BeanNameAware,
         log.info("第3.3步: [{}] BeanFactoryAware接口方法, beanFactory = [{}]", this.myBeanName, beanFactory.toString());
     }
 
-//    @Override
-//    public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
-//        log.info("第4步: [{}] BeanPostProcessorSample.postProcessBeforeInitialization()被执行", this.myBeanName);
-//        return bean;
-//    }
-
     @Override
     public void afterPropertiesSet() throws Exception {
         log.info("第5步: [{}] afterPropertiesSet()被执行", this.myBeanName);
@@ -76,12 +70,6 @@ public class User implements BeanNameAware,
     public void init() {
         log.info("第6步: [{}] init()被执行", this.myBeanName);
     }
-
-//    @Override
-//    public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
-//        log.info("第7步: [{}] BeanPostProcessorSample.postProcessAfterInitialization()被执行", this.myBeanName);
-//        return bean;
-//    }
 
     @Override
     public void destroy() throws Exception {
